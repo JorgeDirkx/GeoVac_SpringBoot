@@ -1,0 +1,21 @@
+======================================================================
+GeoVac: Location based vaccine registration software for remote areas.
+======================================================================
+Technologies used:
+* Java 11
+* Spring Boot
+* Spring MVC
+* Spring Data JPA/Hibernate
+* MySQL
+* Thymeleaf
+
+Vaccines are there to protect and save children’s lives, but almost 20 percent of infants
+misses out on the basic vaccines to live healthy lives.
+
+Each year more then 1.5 million children die from diseases that can be
+prevented by vaccination.
+
+Each year millions of lives are saved by immunization.
+
+This application enables organisations to register, monitor and investigate areas
+where there are low immunization levels.
