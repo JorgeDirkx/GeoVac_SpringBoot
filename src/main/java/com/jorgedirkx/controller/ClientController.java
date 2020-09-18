@@ -1,7 +1,10 @@
 package com.jorgedirkx.controller;
 
 import com.jorgedirkx.entities.Client;
+import com.jorgedirkx.entities.Vaccine;
+import com.jorgedirkx.repository.VaccineRepository;
 import com.jorgedirkx.service.ClientService;
+import com.jorgedirkx.service.VaccineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +17,11 @@ public class ClientController {
 
     @Autowired
     private ClientService clientService;
+
+
+    //good practice ? multiple controllers cause of hibernate ?
+    @Autowired
+    private VaccineService vaccineService;
 
     // display list of clients
     @GetMapping("/")

@@ -4,10 +4,12 @@ import com.jorgedirkx.entities.Client;
 import com.jorgedirkx.entities.Vaccine;
 import com.jorgedirkx.repository.VaccineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class VaccineServiceImpl implements VaccineService {
 
     @Autowired
