@@ -1,12 +1,12 @@
 package com.jorgedirkx.entities;
 
+import jdk.jfr.DataAmount;
+
 import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@Table (name = "client")
-
-
+@Table(name = "client")
 public class Client {
 
     @Id @GeneratedValue
@@ -15,6 +15,12 @@ public class Client {
     private Date dob;
     private String passportNr;
     private String gender;
+
+    @OneToMany(mappedBy = "vaccine")
+    private Set<Registration>registrations = new HashSet<>();
+
+
+
 
     public Client() {
     }
@@ -31,6 +37,7 @@ public class Client {
         this.passportNr = passportNr;
         this.gender = gender;
     }
+
 
     public int getId() {
         return id;

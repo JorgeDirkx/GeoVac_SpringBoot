@@ -1,15 +1,24 @@
 package com.jorgedirkx.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "registration")
-public class Registration {
+public class Registration  {
 
-    @Id
-    @GeneratedValue
-    private int id;
+    @EmbeddedId
+    private RegId id = new RegId();
+
+    @ManyToOne
+    @MapsId("clientId")
+    private Client client;
+
+    @ManyToOne
+    @MapsId("vaccineId")
+    private Vaccine vaccine;
+
     private Date vaccination2Months;
     private Date vaccination3Months;
     private Date vaccination4Months;
@@ -18,16 +27,7 @@ public class Registration {
     private Date vaccination6Yrs;
     private Date vaccination12Yrs;
     private Date vaccination14Yrs;
-    //FK Vaccine and Client to ADD
 
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public Date getVaccination2Months() {
         return vaccination2Months;
@@ -93,13 +93,10 @@ public class Registration {
         this.vaccination14Yrs = vaccination14Yrs;
     }
 
-
-
     @Override
     public String toString() {
         return "Registration{" +
-                "id=" + id +
-                ", vaccination2Months=" + vaccination2Months +
+                "vaccination2Months=" + vaccination2Months +
                 ", vaccination3Months=" + vaccination3Months +
                 ", vaccination4Months=" + vaccination4Months +
                 ", vaccination12Months=" + vaccination12Months +

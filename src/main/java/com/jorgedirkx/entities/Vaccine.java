@@ -1,6 +1,8 @@
 package com.jorgedirkx.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "vaccines")
@@ -11,6 +13,11 @@ public class Vaccine {
     private int id;
     private String name;
     private int type;
+
+    @OneToMany(mappedBy = "vaccine")
+    private Set<Registration>registrations = new HashSet<>();
+
+
 
     public int getId() {
         return id;
