@@ -20,8 +20,6 @@ public class Client {
     private Set<Registration>registrations = new HashSet<>();
 
 
-
-
     public Client() {
     }
 
