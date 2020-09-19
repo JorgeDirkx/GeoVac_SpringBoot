@@ -18,10 +18,11 @@ public class ClientController {
     @Autowired
     private ClientService clientService;
 
-
+/*
     //good practice ? multiple controllers cause of hibernate ?
     @Autowired
     private VaccineService vaccineService;
+    */
 
     // display list of clients
     @GetMapping("/")

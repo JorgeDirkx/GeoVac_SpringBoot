@@ -12,7 +12,9 @@ public class Client {
     @Id @GeneratedValue
     private int id;
     private String name;
+    @Column(name = "Date_of_Birth")
     private Date dob;
+    @Column(name = "PassportNR")
     private String passportNr;
     private String gender;
 
