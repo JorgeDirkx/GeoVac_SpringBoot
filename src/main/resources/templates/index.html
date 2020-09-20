@@ -23,7 +23,7 @@
         <tr>
             <th>Client Id</th>
             <th>Client Name</th>
-            <th>Cliebt DOB</th>
+            <th>Client DOB</th>
             <th>Client Passport Nr.</th>
             <th>Client Gender</th>
             <th> Actions </th>
@@ -33,7 +33,7 @@
         <tr th:each="client : ${listClients}">
             <td th:text="${client.id}"></td>
             <td th:text="${client.name}"></td>
-            <td th:text="${client.dob}"></td>
+            <td th:text="${client.dateofbirth}"></td>
             <td th:text="${client.passportNr}"></td>
             <td th:text="${client.gender}"></td>
             <td> <a th:href="@{/showFormForUpdate/{id}(id=${client.id})}" class="btn btn-primary">Update</a>

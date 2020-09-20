@@ -14,7 +14,7 @@
 <div class="container">
     <h1>GeoVac</h1>
     <hr>
-    <h2>Update Employee</h2>
+    <h2>Update Client</h2>
 
 
     <form action="#" th:action="@{/saveClient}" th:object="${client}" method="POST">
@@ -22,11 +22,12 @@
         <!-- Add hidden form field to handle update -->
         <input type="hidden" th:field="*{id}" />
 
-        <input type="text" th:field="*{firstName}" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{name}" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{lastName}" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{dateofbirth}" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{email}" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{passportNr}" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{gender}" class="form-control mb-4 col-4">
 
         <button type="submit" class="btn btn-info col-2"> Update Employee</button>
     </form>

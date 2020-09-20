@@ -1,6 +1,7 @@
 package com.jorgedirkx.controller;
 
 import com.jorgedirkx.entities.Client;
+import com.jorgedirkx.entities.Location;
 import com.jorgedirkx.entities.Vaccine;
 import com.jorgedirkx.repository.VaccineRepository;
 import com.jorgedirkx.service.ClientService;
@@ -36,7 +37,7 @@ public class ClientController {
         // create model attribute to bind form data
         Client client = new Client();
         model.addAttribute("client", client);
-        return "new_employee";
+        return "new_client";
     }
 
     @PostMapping("/saveClient")
@@ -53,8 +54,8 @@ public class ClientController {
         Client client = clientService.getClientById(id);
 
         // set employee as a model attribute to pre-populate the form
-        model.addAttribute("employee", client);
-        return "update_employee";
+        model.addAttribute("client", client);
+        return "update_client";
     }
 
     @GetMapping("/deleteClient/{id}")

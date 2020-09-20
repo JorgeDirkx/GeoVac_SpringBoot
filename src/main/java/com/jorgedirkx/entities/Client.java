@@ -1,6 +1,7 @@
 package com.jorgedirkx.entities;
 
 import jdk.jfr.DataAmount;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.*;
@@ -9,11 +10,13 @@ import java.util.*;
 @Table(name = "client")
 public class Client {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     @Column(name = "Date_of_Birth")
-    private Date dob;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private Date dateofbirth;
     @Column(name = "PassportNR")
     private String passportNr;
     private String gender;
@@ -30,10 +33,10 @@ public class Client {
         this.name = name;
     }
 
-    public Client (int id, String name, Date dob, String passportNr, String gender){
+    public Client (int id, String name, Date dateofbirth, String passportNr, String gender){
         this.id = id;
         this.name = name;
-        this.dob = dob;
+        this.dateofbirth = dateofbirth;
         this.passportNr = passportNr;
         this.gender = gender;
     }
@@ -55,12 +58,12 @@ public class Client {
         this.name = name;
     }
 
-    public Date getDob() {
-        return dob;
+    public Date getDateofbirth() {
+        return dateofbirth;
     }
 
-    public void setDob(Date dob) {
-        this.dob = dob;
+    public void setDateofbirth(Date dateofbirth) {
+        this.dateofbirth = dateofbirth;
     }
 
     public String getPassportNr() {
@@ -84,7 +87,7 @@ public class Client {
         return "Client{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", dob=" + dob +
+                ", dob=" + dateofbirth +
                 ", passportNr='" + passportNr + '\'' +
                 ", gender='" + gender + '\'' +
                 '}';
