@@ -1,6 +1,5 @@
 package com.jorgedirkx.entities;
 
-import jdk.jfr.DataAmount;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;

@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "registration")
-public class Registration  {
+public class Registration {
 
     @EmbeddedId
     private RegId id = new RegId();
@@ -27,6 +27,9 @@ public class Registration  {
     private Date vaccination6Yrs;
     private Date vaccination12Yrs;
     private Date vaccination14Yrs;
+
+    public Registration() {
+    }
 
 
     public Date getVaccination2Months() {
